@@ -1,5 +1,25 @@
 # Week4tut
 
+# Angular Commands:
+
+* ng generate component (name)
+* ng build
+* ng serve
+
+
+# NPM Commands:
+
+* none already had everything installed from earlier subjects
+
+# Git Commands:
+* git push
+* git merge
+* git commit
+* git add origin 
+* git init
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 
 ## Development server
