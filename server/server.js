@@ -1,12 +1,17 @@
 var express = require('express');
 const { request } = require('http');
+var cors = require('cors')
 var app = express();
-var http = require('http').Server(app)
+
+const path = require('path');
+const http = require('http').Server(app);
+const bodyParer = require('body-parser');
 
 
 
-
-app.use(express.static(__dirname + '/www'));
+app.use(bodyParer.json());
+app.use(express.static(path.join(__dirname, '../dist/week4tut')));
+app.use(cors());
 
 
 
@@ -18,9 +23,13 @@ let server = http.listen(3000, function(){
         "port: " + port)
 })
 
+//require()
+
+
+
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/www/index.html');
+    res.sendFile(__dirname + '../index.html');
     });
 
 app.post('/api/auth', function(req, res) {
@@ -66,4 +75,4 @@ app.post('/api/auth', function(req, res) {
             console.log("username or password does not match")
             details[i].valid = false;
         }
-    }
+    }})
