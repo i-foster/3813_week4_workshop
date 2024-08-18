@@ -14,20 +14,6 @@ app.use(express.static(path.join(__dirname, '../dist/week4tut')));
 app.use(cors());
 
 
-
-let server = http.listen(3000, function(){ 
-    let host = server.address().address;
-    let port = server.address().port;
-    console.log("my first node server!");
-    console.log("server listerning on: " + host + 
-        "port: " + port)
-})
-
-//require()
-
-
-
-
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '../index.html');
     });
@@ -76,3 +62,14 @@ app.post('/api/auth', function(req, res) {
             details[i].valid = false;
         }
     }})
+
+
+    let server = http.listen(3000, function(){ 
+        let host = server.address().address;
+        let port = server.address().port;
+        console.log("my first node server!");
+        console.log("server listerning on: " + host + 
+            "port: " + port)
+    })
+    
+    //require()
