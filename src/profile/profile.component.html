@@ -1,1 +1,21 @@
-<p>profile works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    Welcome <br>
+    Please edit your details
+    <ul>
+    <li><input type="text" [(ngModel)]="user.username" class="editable"></li>
+    <li><input type="text" [(ngModel)]="user.birthdate" class="editable"></li>
+    <li><input type="text" [(ngModel)]="user.age" class="editable"></li>
+    <li><input type="text" [(ngModel)]="user.email" class="editable"></li>
+    <li><input type="text" [(ngModel)]="user.password" class="editable"></li>
+    </ul>
+
+    <button (click)="submit()">update details</button>
+</body>
+</html>
