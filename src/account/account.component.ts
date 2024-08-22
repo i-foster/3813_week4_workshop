@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule, JsonPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-account',
   standalone: true,
@@ -26,11 +27,10 @@ ngOnInit():void {
   this.userDetail()
 }
   userDetail(){
-    if (this.user.valid==false){
-      this.router.navigateByUrl("/login")
-     }
-   let us:any = localStorage.getItem("cuser")
-   this.user = (JSON.parse(us))
+    if (localStorage.getItem("cuser") == null){
+      this.router.navigateByUrl("/login")}
+    let us:any = localStorage.getItem("cuser")
+    this.user = (JSON.parse(us))
   }
 }
 
